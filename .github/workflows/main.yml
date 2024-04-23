@@ -11,7 +11,7 @@ jobs:
     steps: #aqui ele baixa o codigo para essa maquina vitual
       - uses: actions/checkout@main
       #aqui ele baixa o node na maquina virtual
-      - uses: actions/setup-node@mmain
+      - uses: actions/setup-node@main
         with:
           node-version: 12
           #abaixo ele roda comandos node na maquina
