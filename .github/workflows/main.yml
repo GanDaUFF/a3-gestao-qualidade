@@ -1,4 +1,4 @@
-name: ci da a3
+name: CI a3
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  deploy: #aqui ele cria uma virtual machine utilizando a ultima versao do ubunto
+  DESENVOLVIMENTO: #aqui ele cria uma virtual machine utilizando a ultima versao do ubuntu
     runs-on: ubuntu-latest
     steps: #aqui ele baixa o codigo para essa maquina vitual
       - uses: actions/checkout@main
