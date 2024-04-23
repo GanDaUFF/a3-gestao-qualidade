@@ -1,0 +1,22 @@
+name: ci da a3
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  deploy: #aqui ele cria uma virtual machine utilizando a ultima versao do ubunto
+    runs-on: ubuntu-latest
+    steps: #aqui ele baixa o codigo para essa maquina vitual
+      - uses: actions/checkout@main
+      #aqui ele baixa o node na maquina virtual
+      - uses: actions/setup-node@mmain
+        with:
+          node-version: 12
+          #abaixo ele roda comandos node na maquina
+          #npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
+      - run: npm ci
+      #npm run build ele roda a build gerada e aplicada no arquivo package.json, ex: "build": "webpack src/app.js -o public/bundle.js" -> onde ele roda o node na maquina
+      - run: npm run build
+     
