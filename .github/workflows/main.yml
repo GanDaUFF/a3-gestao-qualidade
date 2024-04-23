@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 12
           #abaixo ele roda comandos node na maquina
-      - name: Instalar dependencias
+ 
       - run: npm install 
           #npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
       - run: npm ci
