@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: #aqui ele baixa o codigo para essa maquina vitual
       - uses: actions/checkout@main
+        with:
+         fetch-depth: 0
       #aqui ele baixa o node na maquina virtual
       - uses: actions/setup-node@main
         with:
