@@ -4,7 +4,7 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-  res.send('oeeedla mundo!')
+  res.send('oeeeddla mundo!')
 })
 
  export default app
