@@ -1,29 +1,33 @@
-name: CI a3
+name: CI
 
 on:
   push:
     branches: [ main ]
 
-
 jobs:
-  DESENVOLVIMENTO: #aqui ele cria uma virtual machine utilizando a ultima versao do ubuntu
+  DESENVOLVIMENTO:
     runs-on: ubuntu-latest
-    steps: #aqui ele baixa o codigo para essa maquina vitual
-      - uses: actions/checkout@main
+    steps:
+      - uses: actions/checkout@v2
         with:
-         fetch-depth: 0
-      #aqui ele baixa o node na maquina virtual
-      - uses: actions/setup-node@main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
         with:
           node-version: 12
-          #abaixo ele roda comandos node na maquina
- 
-      - run: npm install 
-          #npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
+
+      - run: npm install
       - run: npm ci
-      #npm run build ele roda a build gerada e aplicada no arquivo package.json, ex: "build": "webpack src/app.js -o public/bundle.js" -> onde ele roda o node na maquina
-      # - run: npm run build
-      - run: |
-         npm install -g conventional-changelog-lint
-         conventional-changelog-lint --from main --to HEAD
-     
+
+  ValidacaoConventionalCommits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Validate Conventional Commits
+        run: |
+          npm install -g conventional-changelog-lint
+          conventional-changelog-lint --from main --to HEAD
+
