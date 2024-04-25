@@ -5,20 +5,22 @@ on:
     branches: [ main ]
 
 jobs:
-  DESENVOLVIMENTO:
+  DESENVOLVIMENTO: # Aqui ele cria uma máquina virtual utilizando a última versão do Ubuntu
     runs-on: ubuntu-latest
-    steps:
+    steps: # Aqui ele baixa o código para essa máquina virtual
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
+      # Aqui ele baixa o Node.js na máquina virtual
       - uses: actions/setup-node@v2
         with:
           node-version: 12
 
-      - run: npm install
-      - run: npm ci
+      - run: npm install  # Baixa as dependências do projeto
+      - run: npm ci       # npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
 
+ # Aqui ele executa a validação de Conventional Commits
   ValidacaoConventionalCommits:
     runs-on: ubuntu-latest
     steps:
@@ -26,8 +28,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate Conventional Commits
+     
+      - name: Validação Conventional Commits
         run: |
           npm install -g conventional-changelog-lint
           conventional-changelog-lint --from main --to HEAD
-
