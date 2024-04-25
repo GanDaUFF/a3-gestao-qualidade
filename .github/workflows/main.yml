@@ -30,7 +30,7 @@ jobs:
           
       - uses: actions/setup-node@v4.0.2
         with:
-          node-version: 20.8.1.
+          node-version: 'lts'
      
       - name: Validação Conventional Commits
         run: |
