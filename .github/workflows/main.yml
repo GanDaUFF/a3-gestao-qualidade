@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: 12
      
-      - name: Validação Conventional Commits
+      - name: Validação Conventional Commits #instala dependencias do conventional changelog para padrao de commits
         run: |
           npm install -g conventional-changelog-lint
           conventional-changelog-lint --from main --to HEAD
@@ -46,6 +46,6 @@ jobs:
         env:
          GGITHUB_TOKEN: ${{ secrets.GGITHUB_TOKEN }} 
         
-        run: npx -p node@v20-lts -c "npx semantic-release"
+        run: npx -p node@v20-lts -c "npx semantic-release" #realização da integração de versionamento semantico automatico
         
 
