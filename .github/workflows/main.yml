@@ -37,12 +37,12 @@ jobs:
           npm install -g conventional-changelog-lint
           conventional-changelog-lint --from main --to HEAD
           
-      - run: export NPM_TOKEN= "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"    
+      - env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}    
       - run: chmod +x node_modules/.bin/semantic-release
       
       - name: Run semantic-release
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        
         run: npx -p node@v20-lts -c "npx semantic-release"
 
 
