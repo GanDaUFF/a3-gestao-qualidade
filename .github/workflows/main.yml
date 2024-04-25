@@ -37,7 +37,7 @@ jobs:
           npm install -g conventional-changelog-lint
           conventional-changelog-lint --from main --to HEAD
           
-      - env:
+        env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}    
       - run: chmod +x node_modules/.bin/semantic-release
       
