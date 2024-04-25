@@ -19,6 +19,7 @@ jobs:
 
       - run: npm install  # Baixa as dependências do projeto
       - run: npm ci       # npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
+      - run: npm build
 
  # Aqui ele executa a validação de Conventional Commits
   ValidacaoConventionalCommits:
