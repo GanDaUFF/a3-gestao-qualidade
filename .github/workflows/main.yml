@@ -41,7 +41,7 @@ jobs:
       
       - run: chmod +x node_modules/.bin/semantic-release
       
-      - name: Run semantic-release
+      - name: Rodar semantic-release
       
         env:
          GGITHUB_TOKEN: ${{ secrets.GGITHUB_TOKEN }} 
