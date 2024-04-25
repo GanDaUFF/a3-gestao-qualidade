@@ -37,7 +37,7 @@ jobs:
           npm install -g conventional-changelog-lint
           conventional-changelog-lint --from main --to HEAD
           
-      - run: $env:NPM_TOKEN = "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"    
+      - run: export NPM_TOKEN= "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"    
       - run: chmod +x node_modules/.bin/semantic-release
       
       - name: Run semantic-release
