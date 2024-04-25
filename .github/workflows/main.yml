@@ -41,8 +41,7 @@ jobs:
       - run: chmod +x node_modules/.bin/semantic-release
       
       - name: Run semantic-release
-        with: # Set the secret as an input
-         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      
         env:
          GH_TOKEN: ${{ secrets.GH_TOKEN }} 
        
