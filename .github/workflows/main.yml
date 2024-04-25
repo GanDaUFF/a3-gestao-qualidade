@@ -44,7 +44,7 @@ jobs:
       
         env:
          GH_TOKEN: ${{ secrets.GH_TOKEN }} 
-       
-      - run: npx -p node@v20-lts -c "npx semantic-release"
+        
+        run: npx -p node@v20-lts -c "npx semantic-release"
         
 
