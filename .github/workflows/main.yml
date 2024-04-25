@@ -40,6 +40,6 @@ jobs:
       - run: chmod +x node_modules/.bin/semantic-release
       
       - name: Run semantic-release
-        run: npx -p node@v18-lts -c "npx semantic-release"
+        run: npx -p node@v20-lts -c "npx semantic-release"
 
 
