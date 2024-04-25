@@ -15,7 +15,7 @@ jobs:
       # Aqui ele baixa o Node.js na máquina virtual
       - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 20.8.1
 
       - run: npm install  # Baixa as dependências do projeto
       - run: npm ci       # npm ci baixa o arquivo package-lock.json na maquina virtual assim tirando erros futuros de compatibilidade
